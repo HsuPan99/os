@@ -21,6 +21,7 @@ Route::get('/', 'BackendController@dashboard')->name('dashboard');
 
 Route::resource('items', 'ItemController'); //7 (get-4/post-1/put-1/delete-1)
 Route::resource('brands', 'BrandController'); //7 (get-4/post-1/put-1/delete-1)
+Route::resource('categories', 'CategoryController'); //7 (get-4/post-1/put-1/delete-1)
 
     
 
