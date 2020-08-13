@@ -13,3 +13,19 @@ Item Manage
 		-data insert
 		-redirect -> (index)
 -show in database
+
+13-8-2020
+----------
+-List,Edit,Delete
+-Validation error,Delete image if upload new image
+-Only brand table
+
+
+UI
+--
+-Filer item page
+-item detail page
+-checkout page
+-profile page
+-login page
+-register page

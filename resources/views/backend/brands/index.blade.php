@@ -7,27 +7,31 @@
 		<thead>
 			<tr>
 				<th>No</th>
+				<th>Photo</th>
 				<th>Name</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>
+			@php $i=1; @endphp
+			@foreach($brands as $brand)
+
 			<tr>
-				<td>1</td>
-				<!-- <td>0001
-					<a href="{{route('items.show',1)}}">
-					<span class="badge badge-primary badge-pill">Detail</span></a>
-				</td> -->
-				<td>Item One
-					<a href="{{route('brands.show',1)}}">
-					<span class="badge badge-primary badge-pill">Detail</span></a>
-				</td>
+				<td>{{$i++}}</td>
+				
+				<td>{{$brand->name}}</td>
+				<td><img src="{{asset($brand->photo)}}" width="70" height="70"></td>
 				
 				<td>
-					<a href="{{route('brands.edit',1)}}" class="btn btn-warning">Edit</a>
-					<a href="#" class="btn btn-danger">Delete</a>
+					<a href="{{route('brands.edit',$brand->id)}}" class="btn btn-warning">Edit</a>
+					<form method="post" action="{{route('brands.destroy',$brand->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+						@csrf
+						@method('DELETE')
+						<input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger">
+					</form>
 				</td>
 			</tr>
+			@endforeach
 		</tbody>
 	</table>
 </div>

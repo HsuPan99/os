@@ -11,6 +11,8 @@
 				<th>Name</th>
 				<th>Price</th>
 				<th>Description</th>
+				<th>Brand</th>
+				<th>Subcatagory</th>
 				
 			</tr>
 		</thead>
@@ -25,6 +27,8 @@
 				<td>{{$item->name}}</td>
 				<td>{{$item->price}} MMK</td>
 				<td>{{$item->description}}</td>
+				<td>{{$item->brand->name}}</td>
+				<td>{{$item->subcategory->name}}</td>
 				
 			</tr>
 		</tbody>
