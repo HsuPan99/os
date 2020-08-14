@@ -107,10 +107,7 @@ class BrandController extends Controller
         $request->validate([
            
             'name' =>'required',
-            'photo' =>'sometimes',
-            
-
-            
+            'photo' =>'sometimes',   
 
         ]);
 

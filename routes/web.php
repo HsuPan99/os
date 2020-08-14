@@ -26,14 +26,23 @@ Route::get('profile','FrontendController@profile')->name('profilepage');
 Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 
 
+//Backend-----------------------------------------
+Route::middleware('auth')->group(function () {
+Route::resource('orders', 'OrderController');
+
 
 Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
-
 Route::resource('items', 'ItemController'); //7 (get-4/post-1/put-1/delete-1)
 Route::resource('brands', 'BrandController'); //7 (get-4/post-1/put-1/delete-1)
 Route::resource('categories', 'CategoryController'); //7 (get-4/post-1/put-1/delete-1)
 Route::resource('subcategories', 'SubcategoryController'); //7 (get-4/post-1/put-1/delete-1)
+});
 
+//----------End Backend----------------------------
 
     
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

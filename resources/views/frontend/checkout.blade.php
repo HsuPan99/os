@@ -12,6 +12,7 @@
 						<thead>
 							<tr>
 								<th>No.</th>
+								<th>Photo</th>
 								<th>Item Name</th>
 								<th>Price</th>
 								<th>Qty</th>
@@ -48,12 +49,16 @@
 				</div>
 			</div>
 			<div class="offset-md-2 col-md-4 text-left">
-				<a href="products.php" class="btn btn-primary">Continue Shopping</a>
+				<a href="{{route('homepage')}}" class="btn btn-primary">Continue Shopping</a>
+
 			</div>
+
 			<div class="offset-md-2 col-md-4 text-left">
-				
-					 	<button class="btn btn-info buy_now">Buy Now</button>
-					
+			@auth	
+			<a class="btn btn-info buy_now" href="#">Check Out</a>
+			@else
+			<a class="btn btn-primary" href="{{route('login')}}">Login To Checkout</a>
+			@endauth	
 					
 					 	
 					 
@@ -65,4 +70,7 @@
 </div>
 	
 </div>
+@endsection
+@section('script')
+<script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
 @endsection
