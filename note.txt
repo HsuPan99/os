@@ -21,11 +21,18 @@ Item Manage
 -Only brand table
 
 
-UI
---
--Filer item page
--item detail page
--checkout page
--profile page
--login page
--register page
+14-08-2020
+----------
+Frontend
+-Filer item page(data binding)
+-profile page(link / retrieve)
+-auth (multi role)
+
+Backend 
+-Order Retrieve
+	-(backend/orders)
+	-create view (index.blade.php)
+	-show table(order list)
+	-OrderController/index
+
+	-RUD(category,subcategory)
