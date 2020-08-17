@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-lg-9 my-4">
 	<h1>Profile Page </h1>
-	<div class="row py-4">
+	{{-- <div class="row py-4">
 		<div class="col-md-4">
 			<img src="{{asset('frontend/frontendimg/c1.png')}}" class="img-fluid" width="100" height="50">
 			<a class="btn btn-info btn-sm my-2 border-primary">Change Profile Picture</a>		
@@ -27,7 +27,8 @@
 
 			
 		</div>
-	</div>
+	</div> --}}
+	{{Auth::user()}}
 	
 </div>
 </div>

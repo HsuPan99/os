@@ -25,14 +25,10 @@ Item Manage
 ----------
 Frontend
 -Filer item page(data binding)
--profile page(link / retrieve)
--auth (multi role)
+-profile UI
+
 
 Backend 
--Order Retrieve
-	-(backend/orders)
-	-create view (index.blade.php)
-	-show table(order list)
-	-OrderController/index
+-Order detail
 
-	-RUD(category,subcategory)
+	

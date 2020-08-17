@@ -26,8 +26,9 @@ Route::get('profile','FrontendController@profile')->name('profilepage');
 Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 
 
+
 //Backend-----------------------------------------
-Route::middleware('auth')->group(function () {
+Route::middleware('role:admin')->group(function () {
 Route::resource('orders', 'OrderController');
 
 
@@ -46,3 +47,6 @@ Route::resource('subcategories', 'SubcategoryController'); //7 (get-4/post-1/put
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('/getitems','FrontendController@getItems')->name('getitems');
