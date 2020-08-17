@@ -21,10 +21,11 @@
 				<td>{{$i++}}</td>
 				<td>{{$order->voucherno}}
 					{{-- <a href="{{route('orders.show',$order->id)}}">
-					<span class="badge badge-primary badge-pill">Detail</span></a>
-					<a href="#" class="box" data-name="{{$order->name}}" data-photo="{{asset($item->photo)}}" data-price="{{$item->price}}" data-desc="{{$item->description}}">
-					<span class="badge badge-primary badge-pill">Modal</span></a> --}}
+					<span class="badge badge-primary badge-pill">Detail</span></a> --}}
+					{{-- <a href="#" class="box" data-name="{{$order->name}}" data-photo="{{asset($order->photo)}}" data-price="{{$order->price}}" data-desc="{{$order->description}}">
+					<span class="badge badge-primary badge-pill">Detail</span></a> --}}
 				</td>
+
 				<td>{{$order->orderdate}}</td>
 				<td>{{$order->note}}</td>
 				<td>{{$order->total}}</td>
@@ -33,6 +34,7 @@
 					<form method="post" action="{{route('orders.destroy',$order->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
 						@csrf
 						@method('DELETE')
+						<a href="{{route('orders.show',$order->id)}}" class="btn btn-warning">Detail</a>
 						<input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger">
 					</form>
 				</td>
