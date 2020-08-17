@@ -29,7 +29,7 @@ Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 
 //Backend-----------------------------------------
 Route::middleware('role:admin')->group(function () {
-Route::resource('orders', 'OrderController');
+
 
 
 Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
@@ -42,7 +42,7 @@ Route::resource('subcategories', 'SubcategoryController'); //7 (get-4/post-1/put
 //----------End Backend----------------------------
 
     
-
+Route::resource('orders', 'OrderController');
 
 Auth::routes();
 
